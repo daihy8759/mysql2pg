@@ -1,0 +1,14 @@
+src:
+  host: 127.0.0.1
+  database: db
+  username: root
+  password: root
+dest:
+  host: 127.0.0.1
+  database: db
+  username: pg
+  password: pg
+maxRows: 10000
+tables:
+  test:
+    - select * from test
