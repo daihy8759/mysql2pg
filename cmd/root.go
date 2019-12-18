@@ -50,15 +50,11 @@ func mysql2pg() {
 	start := time.Now()
 	log.Info("检查Mysql连接")
 	PrepareSrc()
-	if srcDb != nil {
-		log.Info("连接Mysql成功")
-	}
 	defer srcDb.Close()
 
 	log.Info("检查Postgres连接")
 	PrepareDest()
 	defer destDb.Close()
-	// tables := viper.GetStringMap("tables")
 	tables := viper.GetStringMapStringSlice("tables")
 	// maxRows := viper.GetInt("maxRows")
 	var goroutineSize int
